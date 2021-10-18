@@ -25,7 +25,7 @@ moabb.set_log_level("info")
 rng = default_rng()
 
 N_SPLITS = 5
-SAVE_RESULTS = False
+SAVE_RESULTS = True
 
 classifiers = {
     'SCM': MDM(feature=covariance(), n_jobs=-1, verbose=True),
