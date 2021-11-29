@@ -1,0 +1,26 @@
+name: eeg-missingdata
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+- python>=3.6
+- pip
+- numpy
+- scipy
+- joblib>=0.14.1
+- pandas
+- matplotlib
+- plotly
+- seaborn
+- tqdm
+- ipython
+- jupyter
+- pip:
+  - scikit-learn
+  - geomstats
+  - pyriemann
+  - mne
+  - MOABB
+  - git+https://github.com/pymanopt/pymanopt
+  - git+https://github.com/AmmarMian/robuststats

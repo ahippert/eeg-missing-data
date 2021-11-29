@@ -1,4 +1,7 @@
 # eeg-missing-data
+
+CODE IN REFACTORING PHASE.
+
 Classification of EEG signals (P300 Event related potential) with missing values.
 
 Code of the paper "Riemannian classification of EEG signals with missing values" (under review).
@@ -8,7 +11,7 @@ To launch this code, follow these steps:
 1. Install Anaconda.
 2. Create a new environment from the .yml file:
 
-		conda env create -f eeg_missing_data.yml
+		conda env create -f environment.yml
 
 3. Activate the new environment (with myenv replaced by the name of your environment):
 
