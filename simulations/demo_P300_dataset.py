@@ -58,7 +58,7 @@ x_labels = ['Full SCM',
 ]
 
 def get_score(X, y, method, method_name, verbose):
-     """Get the accuracy score using k-folding
+    """Get the accuracy score using k-folding
 
     Parameters
     ----------
