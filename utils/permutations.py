@@ -1,13 +1,13 @@
 '''
 File: permutations.py
 Created Date: Monday November 29th 2021 - 11:17am
-Author: Ammar Mian
+Author: Alexandre Hippert-Ferrer
 Contact: ammar.mian@univ-smb.fr
 -----
 Last Modified: Mon Nov 29 2021
-Modified By: Ammar Mian
+Modified By: Alexandre Hippert-Ferrer
 -----
-Copyright (c) 2021 Université Savoie Mont-Blanc
+Copyright (c) 2021 Université Savoie Mont-Blanc, CentraleSupélec
 '''
 
 #!/usr/bin/python

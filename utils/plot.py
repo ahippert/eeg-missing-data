@@ -1,11 +1,11 @@
 '''
 File: plot.py
 Created Date: Monday November 29th 2021 - 11:12am
-Author: Alexandre Hippert
+Author: Alexandre Hippert-Ferrer
 Contact: hippert27@gmail.com
 -----
-Last Modified: Mon Nov 29 2021
-Modified By: Ammar Mian
+Last Modified: Wed Dec 01 2021
+Modified By: Alexandre Hippert-Ferrer
 -----
 Copyright (c) 2021 Université Savoie Mont-Blanc / CentraleSupelec
 '''
@@ -18,8 +18,7 @@ sns.set_theme(style="whitegrid")
 sns.plotting_context("notebook", font_scale=6)
 sns.set(rc={'figure.figsize':(11,5)})
 
-
-def plot_bar(accuracies, ratio_tab=[690], showfig=True, savefig=False):
+def plot_bar(accuracies, missing_ratio, showfig=True, savefig=False):
     """Plot bar results from accuracies computed with varying ratio
     of missing data.
 
@@ -34,16 +33,14 @@ def plot_bar(accuracies, ratio_tab=[690], showfig=True, savefig=False):
     savefig : bool, optional
         [description], by default False
     """
-    shape = (1728, 16, 103)
-    subject_list = np.arange(1,11)
 
-    accuracies = accuracies[accuracies.Ratio != 57]
+    #accuracies = accuracies[accuracies.Ratio != 57]
 
     # Draw a nested barplot
-    for i in ratio_tab:
+    for i in missing_ratio:
         g = sns.catplot(
             x="Subject", y="Accuracy", hue="Method",
-            data=accuracies.loc[accuracies["Ratio"] == int(100*(i/shape[0]))],
+            data=accuracies.loc[accuracies["Ratio"] == int(i)],
             kind="bar", ci="sd", palette="mako", alpha=.6, height=5,
             legend=False
         )
@@ -64,3 +61,17 @@ def plot_bar(accuracies, ratio_tab=[690], showfig=True, savefig=False):
     plt.legend(loc='lower left')
     if savefig: plt.savefig('accuracy_vs_missingness.pdf')
     if showfig: plt.show()
+
+def main():
+
+    # Read pkl file containing classification accuracies
+    accuracies = pd.read_pickle("../simulations/accuracies.pkl")
+
+    # Accuracies are also plotted for a specific missing data ratio
+    ratio_missing_data = [39]
+
+    # Plot accuracies
+    plot_bar(accuracies, ratio_missing_data)
+
+if __name__ == "__main__":
+    main()
