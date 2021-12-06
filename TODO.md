@@ -1,11 +1,7 @@
 # TODO list
 
-**Wed 01/12/2021**
+**Mon 06/12/2021**
 
-### Urgent
-- Rewrite README file
-  - Write install procedure
-### Less urgent
 - In `demo_P300_dataset.py`:
   - migrate `CovariancesEstimation()` in `robuststats.estimation.base`
 - In `estimators.py`:
